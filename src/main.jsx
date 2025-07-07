@@ -10,13 +10,6 @@ import Home from './Pages/Home';
 import Statistics from './Pages/Statistics';
 import Dashboard from './Pages/Dashboard';
 
-// You can run this inside useEffect or after DOM loaded
-document.addEventListener('DOMContentLoaded', () => {
-  import('preline').then((preline) => {
-    preline.init();
-  });
-});
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -28,15 +21,15 @@ const router = createBrowserRouter([
       },
       {
         path: 'statistics',
-        element: <Statistics></Statistics>
+        element: <Statistics></Statistics>,
       },
       {
         path: 'dashboard',
-        element: <Dashboard></Dashboard>
-      }
+        element: <Dashboard></Dashboard>,
+      },
     ],
-  
-}]);
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
