@@ -7,6 +7,8 @@ import './index.css';
 import 'preline/preline';
 import Root from './layout/root';
 import Home from './Pages/Home';
+import Statistics from './Pages/Statistics';
+import Dashboard from './Pages/Dashboard';
 
 // You can run this inside useEffect or after DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,9 +23,17 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Home></Home>,
       },
+      {
+        path: 'statistics',
+        element: <Statistics></Statistics>
+      },
+      {
+        path: 'dashboard',
+        element: <Dashboard></Dashboard>
+      }
     ],
   
 }]);

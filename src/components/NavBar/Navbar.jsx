@@ -1,6 +1,16 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+
+    const links = <>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/statistics">Statistics</NavLink>
+        <NavLink to="/dashboard">Dashboard</NavLink>
+        
+    </>
+
+
   return (
     <div>
       {/* ========== HEADER ========== */}
