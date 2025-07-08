@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -9,13 +10,9 @@ const Footer = () => {
           {/* Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
             <div className="col-span-full lg:col-span-1">
-              <a
-                className="flex-none text-xl font-semibold text-white focus:outline-hidden focus:opacity-80"
-                href="#"
-                aria-label="Brand"
-              >
-                Brand
-              </a>
+              <Link to="/" className="text-2xl font-bold text-white">
+              Gadget Haven
+            </Link>
             </div>
             {/* End Col */}
 
@@ -129,7 +126,7 @@ const Footer = () => {
 
           <div className="mt-5 sm:mt-12 grid gap-y-2 sm:gap-y-0 sm:flex sm:justify-between sm:items-center">
             <div className="flex flex-wrap justify-between items-center gap-2">
-              <p className="text-sm text-gray-400">© 2025 Preline Labs.</p>
+              <p className="text-sm text-gray-400">© 2025 | Designed by Rakib</p>
             </div>
             {/* End Col */}
 
