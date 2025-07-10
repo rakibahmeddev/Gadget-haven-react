@@ -4,6 +4,7 @@ import { RiStarSLine } from 'react-icons/ri';
 import { MdOutlineShoppingCart } from 'react-icons/md';
 import { IoMdHeartEmpty } from 'react-icons/io';
 import { addToStoredCart } from '../../utility/addToDB';
+import { ToastContainer, toast } from 'react-toastify';
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -26,6 +27,7 @@ const ProductDetail = () => {
   const handleAddToCart = (id) => {
     console.log('button clicked', id);
     addToStoredCart(id);
+    toast("Product add to the cart successfully");
   };
 
   return (
@@ -125,6 +127,8 @@ const ProductDetail = () => {
         </div>
       </div>
       {/* End Features */}
+
+       <ToastContainer />
     </div>
   );
 };
