@@ -3,6 +3,7 @@ import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { RiStarSLine } from 'react-icons/ri';
 import { MdOutlineShoppingCart } from 'react-icons/md';
 import { IoMdHeartEmpty } from 'react-icons/io';
+import { addToStoredCart } from '../../utility/addToDB';
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -11,7 +12,7 @@ const ProductDetail = () => {
   // console.log(id, productId, products)
 
   const newProduct = products.find((product) => product.id === id);
-  console.log(newProduct);
+  //   console.log(newProduct);
   const {
     id: newId,
     title,
@@ -21,6 +22,11 @@ const ProductDetail = () => {
     description,
     rating,
   } = newProduct;
+
+  const handleAddToCart = (id) => {
+    console.log('button clicked', id);
+    addToStoredCart(id);
+  };
 
   return (
     <div className="bg-gray-100 pb-26">
@@ -97,14 +103,14 @@ const ProductDetail = () => {
 
                   <div className="mt-8 flex items-center">
                     <button></button>
-                    <Link
-                      to=""
+
+                    <button
+                      onClick={() => handleAddToCart(newId)}
                       className="btn px-12 py-3 flex justify-center items-center gap-x-1 bg-purple-600 text-white rounded-lg"
                     >
-                      {' '}
                       <p>Add to Cart</p>{' '}
                       <MdOutlineShoppingCart className="text-xl" />
-                    </Link>
+                    </button>
 
                     <Link to="" className="bg-green-500 p-3 rounded-full ml-8">
                       <IoMdHeartEmpty className="text-2xl text-white" />
