@@ -18,8 +18,35 @@ const addToStoredCart = (id) => {
     getCart.push(id);
     const newCart = JSON.stringify(getCart);
     localStorage.setItem('products', newCart);
-    console.log('successfully added to the cart', newCart)
+    console.log('successfully added to the cart', newCart);
   }
 };
 
-export { getStoredCart, addToStoredCart };
+// for wishlist
+const getWishlist = () => {
+  const currentWishlist = localStorage.getItem('wishlist');
+  if (currentWishlist) {
+    const newCurrentWishlist = JSON.parse(currentWishlist);
+    console.log('new wishlist from get function', newCurrentWishlist);
+
+    return newCurrentWishlist;
+  } else {
+    return [];
+  }
+};
+
+const addToWishlist = (id) => {
+  const wishlist = getWishlist(id);
+
+  if (wishlist.includes(id)) {
+    console.log('id already into the wishlist');
+    return;
+  } else {
+    wishlist.push[id];
+    const neWishlist = JSON.stringify(id);
+    localStorage.setItem('wishlist', neWishlist);
+    console.log('successfully added to the wishlist');
+  }
+};
+
+export { getStoredCart, addToStoredCart, getWishlist, addToWishlist };

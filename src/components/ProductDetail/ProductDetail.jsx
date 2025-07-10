@@ -3,7 +3,7 @@ import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { RiStarSLine } from 'react-icons/ri';
 import { MdOutlineShoppingCart } from 'react-icons/md';
 import { IoMdHeartEmpty } from 'react-icons/io';
-import { addToStoredCart } from '../../utility/addToDB';
+import { addToStoredCart, addToWishlist } from '../../utility/addToDB';
 import { ToastContainer, toast } from 'react-toastify';
 
 const ProductDetail = () => {
@@ -24,11 +24,18 @@ const ProductDetail = () => {
     rating,
   } = newProduct;
 
+//   for add to cart 
   const handleAddToCart = (id) => {
     console.log('button clicked', id);
     addToStoredCart(id);
     toast("Product add to the cart successfully");
   };
+
+//   for wishlist 
+const handleWishlist = (id)=> {
+    addToWishlist(id)
+toast("Product add to the Wishlist successfully");
+}
 
   return (
     <div className="bg-gray-100 pb-26">
@@ -114,9 +121,9 @@ const ProductDetail = () => {
                       <MdOutlineShoppingCart className="text-xl" />
                     </button>
 
-                    <Link to="" className="bg-green-500 p-3 rounded-full ml-8">
+                    <button onClick={()=> handleWishlist(newId)} className="bg-green-500 p-3 rounded-full ml-8">
                       <IoMdHeartEmpty className="text-2xl text-white" />
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>
