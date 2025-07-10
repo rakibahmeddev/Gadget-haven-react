@@ -9,11 +9,13 @@ import Root from './layout/root';
 import Home from './Pages/Home';
 import Statistics from './Pages/Statistics';
 import Dashboard from './Pages/Dashboard';
+import ErrorPage from './components/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',

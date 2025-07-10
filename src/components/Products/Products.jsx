@@ -17,10 +17,10 @@ const Products = () => {
         Explore Cutting-Edge Gadgets
       </h2>
       <div className="flex my-16">
-        <div className="w-[20%] bg-amber-300 text-center p-6 md:mr-8">
+        <div className="w-[20%] bg-white text-center p-6 md:mr-8 shadow-xl/20 rounded-xl border border-gray-100">
           <h2 className='text-2xl font-bold'>Sidebar</h2>
         </div>
-        <div className="w-[80%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="w-[80%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
           {products.map((product) => (
             <Product key={product.id} product={product}></Product>
           ))}
