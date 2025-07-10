@@ -52,12 +52,12 @@ const ProductDetail = () => {
 
       {/* Features */}
       <div className=" px-22 lg:px-0">
-        <div className=' md:max-w-[85rem] bg-white rounded-4xl p-6 md:p-8 lg:p-10 mx-auto mt-[-150px]'>
+        <div className=" md:max-w-[85rem] bg-white rounded-4xl p-6 md:p-8 lg:p-10 mx-auto mt-[-150px]">
           {/* Grid */}
           <div className="md:flex gap-x-10">
             <div className="flex justify-center items-center border border-gray-200 rounded-2xl p-10 shadow-2xl">
               <img
-                className="rounded-2xl w-[50%] md:w-[600px] block"
+                className="rounded-2xl w-[50%] md:w-[400px] block"
                 src={image}
                 alt={title}
               />
