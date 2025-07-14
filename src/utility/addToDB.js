@@ -40,10 +40,10 @@ const addToWishlist = (id) => {
 
   if (wishlist.includes(id)) {
     console.log('id already into the wishlist');
-    return;
+    return wishlist;
   } else {
-    wishlist.push[id];
-    const neWishlist = JSON.stringify(id);
+    wishlist.push(id);
+    const neWishlist = JSON.stringify(wishlist);
     localStorage.setItem('wishlist', neWishlist);
     console.log('successfully added to the wishlist');
   }

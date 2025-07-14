@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
   const { id, title, image, price, category, description, rating } = product;
-  console.log(product);
+  // console.log(product);
   const { rate, count } = rating;
   return (
     <div>
